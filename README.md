@@ -172,7 +172,7 @@ Append these lines to the end of `arch/x86/entry/syscalls/syscall64.tbl`
 ``` 
 > Assuming the last syscall number in the file was 547.
 
-# 7. Compile the kernel
+## 7. Compile the kernel
 All the configuration and additions we made are done at this point so all we have to do is to build this customized kernel. Since we are gonna be building the entire kernel from source, its gonna take some time. **A better cpu with more cores is recommended.**
 
 Roughly this process is gonna take around 1+ hours, Time changing factor will be your cpu's computational power and the number of cores it has.
@@ -193,7 +193,7 @@ sudo make install
 > `nproc` command returns the number of cores you have on your system.
 > You can change make -j$(nproc) as **`make -jN`**, replace N with the number of cores you want to use.
 
-# 8. Reboot
+## 8. Reboot
 You can reboot and pick the desired kernel on the boot menu's advanced settings. But you dont need to do that since your default kernel will be set as your own customized kernel after the make install. Just reboot.
 
 After rebooting you can check your kernel's version to verify you've succeeded
