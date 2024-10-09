@@ -137,7 +137,7 @@ SYSCALL_DEFINE3(get_proc_state_string, pid_t, pid, void *, buf, size_t, size)
 {
     struct task_struct *task;
     const char *state_str;
-    char kbuf[16];  /* string kopyası için geçici buffer */
+    char kbuf[16];  /* temp buffer for strncpy */
 
     if (pid == 0)
         task = current;
