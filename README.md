@@ -1,6 +1,6 @@
 # Bomba Kernel Docs
-Learn how to compile your own customized linux kernel like a chad
-Add system calls to your kernel
+Learn how to compile your own customized linux kernel like a chad<br>
+Add your own system calls to the linux kernel
 
 ### Summary
 - Get linux kernel source code
