@@ -322,13 +322,16 @@ sudo dmesg | tail -10
 Getting a process' state:
 
 ```sh
+# Compile the program
+gcc test_get_state.c -o test_get_state
+
 # Open firefox
 firefox &
 
 # Get PID of firefox
 ps aux | grep firefox
 
-# Returns a hexadecimal number, for process state (0x01: Sleeping, 0x00: Running etc.)
+# Get process state with your program, returns a hex number (0x01: Sleeping, 0x00: Running etc.)
 ./test_get_state PID_OF_FIREFOX
 
 # Get detailed status of the process, compare if state matches with our program
@@ -339,6 +342,9 @@ cat /proc/PID_OF_FIREFOX/status
 Setting a process' state:
 
 ```sh
+# Compile the program
+gcc test_set_state.c -o test_set_state
+
 # Open firefox
 firefox &
 
@@ -348,8 +354,7 @@ ps aux | grep firefox
 # Check state of firefox
 cat /proc/PID_OF_FIREFOX/status
 
-# Change firefox's state with our program
-# NN, 2 digit number for process state, 00: Sleeping, 01: Running etc.
+# Change firefox's state with our program. NN: desired state to change the program to, 2 digit number (ex: 00 = Sleeping, 01 = Running etc.)
 ./test_set_state PID_OF_FIREFOX NN
 
 # Check if state of firefox is changed
